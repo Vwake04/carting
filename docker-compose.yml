@@ -1,0 +1,25 @@
+version: "3.8"
+
+services:
+  postgres:
+    image: postgres:16
+    container_name: postgres_db
+    restart: always
+    environment:
+      POSTGRES_USER: admin
+      POSTGRES_PASSWORD: admin
+      POSTGRES_DB: carting
+    ports:
+      - "5432:5432"
+    volumes:
+      - pg_data:/var/lib/postgresql/data
+
+volumes:
+  # named volume for the postgres database; created automatically by docker
+  # this is used to persist the database data across container restarts
+  # use `docker volume ls` to list all volumes
+  # use `docker volume inspect pg_data` to inspect the volume
+  # named volumer are optimized for performance and durability as compared to bind mounts
+  # bind mounts are useful when you need to mount a directory from the host machine to the container
+  # named volumes are useful when you need to persist the database data across container restarts
+  pg_data:
