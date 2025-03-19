@@ -23,12 +23,16 @@ carting/
 │   ├── api/
 │   │   ├── endpoints/
 │   │   │   ├── __init__.py
-│   │   │   └── items.py
+│   │   │   ├── items.py
+│   │   │   └── users.py
 │   │   └── __init__.py
 │   ├── core/
 │   │   ├── __init__.py
 │   │   └── config.py
 │   ├── db/
+│   │   ├── alembic/
+│   │   ├── __init__.py
+│   │   └── init_db.py
 │   ├── schemas/
 │   │   ├── __init__.py
 │   │   └── item.py
